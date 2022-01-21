@@ -9,6 +9,57 @@
 #include "manager.hpp"
 using namespace std;
 
+//进入管理员子菜单界面
+void managerMenu(Identity *&manager)
+{
+    while (true)
+    {
+        //调用管理员子菜单
+        manager->operMenu();
+
+        //将父类指针转化为子类指针 调用子类的其他接口
+        Manager *man = (Manager *)manager;
+
+        int select = 0;
+        //接收用户的选项
+        cin >> select;
+
+        if (select == 1) //添加账号
+        {
+            cout << "添加账号" << endl;
+            man->addPerson();
+        }
+
+        else if (select == 2) //查看账号
+        {
+            cout << "查看账号" << endl;
+            man->showPerson();
+        }
+
+        else if (select == 3) //查看机房
+        {
+            cout << "查看机房" << endl;
+            man->showComputer();
+        }
+
+        else if (select == 4) //清空预约
+        {
+            cout << "清空预约" << endl;
+            man->cleanFile();
+        }
+
+        else
+        {
+            //注销登录
+            delete manager;
+            cout << "注销登录成功!" << endl;
+            system("read -p 'Press Enter to continue...' var");
+            system("clear");
+            return;
+        }
+    }
+}
+
 //登录功能 参数1 操作文件名 参数2 操作身份类型
 void loginIn(string fileName, int type)
 {
@@ -94,18 +145,17 @@ void loginIn(string fileName, int type)
         //管理员身份验证
         string fName;
         string fPwd;
-        while(ifs>>fName && ifs>>fPwd)
+        while (ifs >> fName && ifs >> fPwd)
         {
-            if(fName == name && fPwd == pwd)
+            if (fName == name && fPwd == pwd)
             {
-                cout<<"管理员验证登录成功！"<<endl;
+                cout << "管理员验证登录成功！" << endl;
                 system("read -p 'Press Enter to continue...' var");
                 system("clear");
                 person = new Manager(name, pwd);
                 //进入管理员子菜单界面
 
-                return ;
-
+                return;
             }
         }
     }
