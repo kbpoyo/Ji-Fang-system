@@ -23,11 +23,11 @@ public:
     //析构
     ~Teacher();
 };
-
+//默认构造
 Teacher::Teacher(/* args */)
 {
 }
-
+//析构
 Teacher::~Teacher()
 {
 }

@@ -1,5 +1,6 @@
-#ifndef _STUDENT_CPP_
-#define _STUDENT_CPP_
+#ifndef _STUDENT_H_
+#define _STUDENT_H_
+#include <iostream>
 using namespace std;
 #include "Identity.h"
 
@@ -27,13 +28,13 @@ public:
     ~Student();
 };
 
-//析构
-Student::~Student()
+//默认构造
+Student::Student(/* args */)
 {
 }
 
-//默认构造
-Student::Student(/* args */)
+//析构
+Student::~Student()
 {
 }
 
