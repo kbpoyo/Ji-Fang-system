@@ -43,6 +43,21 @@ Manager::Manager(string name, string pwd)
 //菜单界面
 void Manager::operMenu()
 {
+    cout << "欢迎管理员：" << this->m_Name << "登录！" << endl;
+    cout << "\t\t -----------------------------------------------" << endl;
+    cout << "\t\t|                1. 添加账号               \t| " << endl;
+    cout << "\t\t|                                         \t| " << endl;
+    cout << "\t\t|                2. 查看账号                \t| " << endl;
+    cout << "\t\t|                                          \t| " << endl;
+    cout << "\t\t|                3. 查看机房                \t| " << endl;
+    cout << "\t\t|                                          \t| " << endl;
+    cout << "\t\t|                4. 清空预约                \t| " << endl;
+    cout << "\t\t|                                          \t| " << endl;
+    cout << "\t\t|                0. 注销登录                \t| " << endl;
+    cout << "\t\t|                                          \t| " << endl;
+    cout << "\t\t -----------------------------------------------\n"
+         << endl;
+    cout << "请选择您的操作：" << endl;
 }
 //添加账号
 void Manager::addPerson()

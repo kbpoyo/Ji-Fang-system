@@ -154,7 +154,7 @@ void loginIn(string fileName, int type)
                 system("clear");
                 person = new Manager(name, pwd);
                 //进入管理员子菜单界面
-
+                managerMenu(person);
                 return;
             }
         }

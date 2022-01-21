@@ -38,6 +38,7 @@ Teacher::Teacher(int empId, string name, string pwd)
 //菜单界面
 void Teacher::operMenu()
 {
+  
 }
 //查看所有人的预约
 void Teacher::showAllOrder()
