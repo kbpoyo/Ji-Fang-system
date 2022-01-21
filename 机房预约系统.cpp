@@ -72,10 +72,42 @@ void loginIn(string fileName, int type)
     else if (type == 2)
     {
         //教师身份验证
+        int fId;      //从文件中获取的id号
+        string fName; //从文件中获取的姓名
+        string fPwd;  //从文件中获取的密码
+        while (ifs >> fId && ifs >> fName && ifs >> fPwd)
+        {
+            if (fId == id && fName == name && fPwd == pwd)
+            {
+                cout << "教师验证登录成功！" << endl;
+                system("read -p 'Press Enter to continue...' var");
+                system("clear");
+                person = new Teacher(id, name, pwd);
+                //进入教师子菜单界面
+
+                return;
+            }
+        }
     }
     else if (type == 3)
     {
         //管理员身份验证
+        string fName;
+        string fPwd;
+        while(ifs>>fName && ifs>>fPwd)
+        {
+            if(fName == name && fPwd == pwd)
+            {
+                cout<<"管理员验证登录成功！"<<endl;
+                system("read -p 'Press Enter to continue...' var");
+                system("clear");
+                person = new Manager(name, pwd);
+                //进入管理员子菜单界面
+
+                return ;
+
+            }
+        }
     }
 
     cout << "验证登录失败！" << endl;
