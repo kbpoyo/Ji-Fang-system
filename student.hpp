@@ -5,7 +5,7 @@ using namespace std;
 #include "Identity.h"
 
 //学生类
-class Student
+class Student : public Identity
 {
 private:
     int id; //学号
